@@ -1,6 +1,7 @@
 #
 # ~/.zshrc
 #
+export PATH=$PATH:/home/niklas/.cargo/bin
 export OPENER=rifle
 export EDITOR=nvim
 export MANPAGER="/bin/sh -c \"col -b | nvim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
@@ -98,12 +99,12 @@ alias cp='cp -i'
 alias df='df -h'
 
 # use z
-. /usr/share/z/z.sh
+. ~/z.sh
 
 # fzf with fd for super fast fuzzy searching
-export FZF_DEFAULT_COMMAND='fd --hidden --type f --exclude={.git,.cache}'
+export FZF_DEFAULT_COMMAND='find -type f ! -path ".git" ! -path ".cache"'
 # export FZF_DEFAULT_OPTS='--ansi'
-export FZF_CTRL_T_COMMAND='fd --hidden --type f --exclude ".git"'
+export FZF_CTRL_T_COMMAND='find -type f ! -path ".git" ! -path ".cache"'
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
